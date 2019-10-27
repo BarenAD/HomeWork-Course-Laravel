@@ -1,0 +1,10 @@
+{
+    "name": "baren/home-work2",
+    "description": "HomeWork",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "HOMEWORKERS\\": "name_space/HOMEWORKERS/"
+        }
+    }
+}
