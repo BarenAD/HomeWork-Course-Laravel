@@ -120,7 +120,44 @@ class HomeWork2
 
     public function Task7TheDevilTask()
     {
+        $currentNumber = 0;
+        while (!$this->checkAll($currentNumber) && $currentNumber < 10000000000){
+            $currentNumber++;
+        }
+        echo $currentNumber . PHP_EOL;
+//        while($currentNumber < 100){
+//            echo $currentNumber;
+//            if ($this->checkSummFeature3and7($currentNumber)){
+//                echo " TRUE! \n";
+//            } else {
+//                echo " FALSE! \n";
+//            }
+//            $currentNumber++;
+//        }
+    }
 
+    private function checkAll($number)
+    {
+        if ($this->checkNumberNumbers($number)){
+            if ($this->checkFeature3($number)){
+                if ($this->checkFeature7($number)){
+                    if ($this->checkSummFeature3and7($number)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private function checkSummFeature3and7($number)
+    {
+        $summ = $this->getSummNumber($number);
+        if ($this->checkFeature3($summ) && $this->checkFeature7($summ)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private function checkFeature7($number)
@@ -134,15 +171,46 @@ class HomeWork2
 
     private function checkFeature3($number)
     {
+        if ($this->getSummNumber($number) % 3 === 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function getSummNumber($number)
+    {
         $summ = 0;
         while ($number > 0){
             $summ += $number % 10;
             $number = intval($number / 10);
         }
-        if ($summ % 3 === 0){
-            return true;
-        } else {
-            return false;
+        return $summ;
+    }
+
+    private function checkNumberNumbers($number){
+        $availability3 = false;
+        $availability7 = false;
+        while ($number > 0){
+            $temp_number = $number % 10;
+            if ($temp_number !== 3 && $temp_number !== 7) {
+                return false;
+            }
+            if(!$availability3){
+                if ($temp_number === 3){
+                    $availability3 = true;
+                }
+            }
+            if(!$availability7){
+                if ($temp_number === 7){
+                    $availability7 = true;
+                }
+            }
+            $number = intval($number / 10);
         }
+        if ($availability3 && $availability7){
+            return true;
+        }
+        return false;
     }
 }
