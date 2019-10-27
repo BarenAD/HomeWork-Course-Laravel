@@ -125,15 +125,6 @@ class HomeWork2
             $currentNumber++;
         }
         echo $currentNumber . PHP_EOL;
-//        while($currentNumber < 100){
-//            echo $currentNumber;
-//            if ($this->checkSummFeature3and7($currentNumber)){
-//                echo " TRUE! \n";
-//            } else {
-//                echo " FALSE! \n";
-//            }
-//            $currentNumber++;
-//        }
     }
 
     private function checkAll($number)
