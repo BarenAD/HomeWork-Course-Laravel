@@ -25,3 +25,5 @@ $ObjectHomeWork2 = new HomeWork2();
 //$ObjectHomeWork2->Task6AllTuesday(-5, "September");
 //$ObjectHomeWork2->Task6AllTuesday(2019, "September");
 //$ObjectHomeWork2->Task6AllTuesday(2010, "September");
+
+$ObjectHomeWork2->Task7TheDevilTask();

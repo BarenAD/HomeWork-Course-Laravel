@@ -117,4 +117,32 @@ class HomeWork2
         }
         $this->offset();
     }
+
+    public function Task7TheDevilTask()
+    {
+
+    }
+
+    private function checkFeature7($number)
+    {
+        if ((intval($number / 10) - (($number % 10) * 2)) % 7 === 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function checkFeature3($number)
+    {
+        $summ = 0;
+        while ($number > 0){
+            $summ += $number % 10;
+            $number = intval($number / 10);
+        }
+        if ($summ % 3 === 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
