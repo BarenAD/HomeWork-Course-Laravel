@@ -50,4 +50,31 @@ class HomeWork3
             echo "NAME :: " . $row["NAME"] . "  || AGE :: " . $row["AGE"] . PHP_EOL;
         }
     }
+
+    public function Task3SelectLike()
+    {
+        $result = $this->connection->execute_query_select("SELECT NAME, AGE FROM USERS WHERE NAME LIKE '%ав%' OR NAME LIKE '%аб%'");
+        return json_encode($result, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function Task4Update()
+    {
+        $result = $this->connection->execute_query_select("SELECT ID, NAME FROM USERS WHERE AGE > 70");
+        foreach ($result as $row){
+            $new_name = $this->create_name();
+            $temp_ID = $row["ID"];
+            echo "ID :: " . $row["ID"] . "  AGE :: " . $row["AGE"] . "  || old_NAME :: " . $row["NAME"] . "  -->  new_NAME :: " . $new_name . PHP_EOL;
+            $this->connection->execute_query_insert("UPDATE USERS SET NAME = '$new_name' WHERE ID = $temp_ID");
+        }
+    }
+
+    public function Task5Distinct()
+    {
+        $result = $this->connection->execute_query_select("SELECT DISTINCT NAME FROM USERS");
+        $i = 1;
+        foreach ($result as $row){
+            echo $i . ":  NAME :: " . $row["NAME"] . PHP_EOL;
+            $i++;
+        }
+    }
 }

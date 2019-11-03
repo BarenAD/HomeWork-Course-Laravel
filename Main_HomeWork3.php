@@ -11,3 +11,9 @@ $ObjectHomeWork3 = new HomeWork3($BD);
 //$ObjectHomeWork3->Task1CreateRows();
 
 //$ObjectHomeWork3->Task2RowsAgeBig50();
+
+//echo $ObjectHomeWork3->Task3SelectLike() . PHP_EOL;
+
+//$ObjectHomeWork3->Task4Update();
+
+//$ObjectHomeWork3->Task5Distinct();
