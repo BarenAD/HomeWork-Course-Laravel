@@ -70,11 +70,14 @@ class HomeWork3
 
     public function Task5Distinct()
     {
-        $result = $this->connection->execute_query_select("SELECT DISTINCT NAME FROM USERS");
+        //$result = $this->connection->execute_query_select("SELECT DISTINCT NAME FROM USERS");
+        $result = $this->connection->execute_query_select("SELECT NAME, COUNT(NAME) AS 'COL' FROM USERS GROUP BY NAME");
         $i = 1;
         foreach ($result as $row){
-            echo $i . ":  NAME :: " . $row["NAME"] . PHP_EOL;
-            $i++;
+            if ($row["COL"] == 1) {
+                echo $i . ":  NAME :: " . $row["NAME"] . PHP_EOL;
+                $i++;
+            }
         }
     }
 }

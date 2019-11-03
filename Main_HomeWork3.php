@@ -16,4 +16,4 @@ $ObjectHomeWork3 = new HomeWork3($BD);
 
 //$ObjectHomeWork3->Task4Update();
 
-//$ObjectHomeWork3->Task5Distinct();
+$ObjectHomeWork3->Task5Distinct();
