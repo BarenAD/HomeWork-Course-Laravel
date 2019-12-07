@@ -4,8 +4,8 @@ require_once './vendor/autoload.php';
 
 use SERVICES\ConnectionDB;
 use SERVICES\BDServicesForHomeWork4;
-use HOMEWORKERS\NewsDB;
-use HOMEWORKERS\AnnounceDB;
+use HOMEWORKERS\HomeWork4\NewsDB;
+use HOMEWORKERS\HomeWork4\AnnounceDB;
 
 $Connection = new ConnectionDB();
 $BDServices = new BDServicesForHomeWork4($Connection);
