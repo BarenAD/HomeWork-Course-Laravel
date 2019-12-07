@@ -26,5 +26,6 @@ class ConnectionDB
     {
         $this->pdo_statement->query("set names utf8");
         $this->pdo_statement->query($query_string);
+        return $this->pdo_statement->lastInsertId();
     }
 }

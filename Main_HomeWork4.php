@@ -12,5 +12,3 @@ $BDServices = new BDServicesForHomeWork4($Connection);
 
 $Homework4NewsDB = new NewsDB($BDServices);
 $Homework4AnnounceDB = new AnnounceDB($BDServices);
-
-$Homework4NewsDB->get_all();

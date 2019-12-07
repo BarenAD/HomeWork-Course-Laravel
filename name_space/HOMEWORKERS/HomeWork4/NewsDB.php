@@ -12,6 +12,11 @@ class NewsDB
         $this->BDServices = $inBDServices;
     }
 
+    public function create($text, $link)
+    {
+        return new News($this->BDServices->create_new_news($text, $link)["0"]);
+    }
+
     public function get_all()
     {
         $Result = array();

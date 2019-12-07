@@ -14,12 +14,15 @@ class AnnounceDB
         $this->BDServices = $inBDServices;
     }
 
+    public function create($title, $text, $author)
+    {
+        return new Announce($this->BDServices->create_new_announce($title, $text, $author)["0"]);
+    }
+
     public function get_all()
     {
         $Result = array();
         foreach ($this->BDServices->get_all_announce() as $value){
-            printf($value);
-            echo PHP_EOL;
             $Result[] = new Announce($value);
         }
         return $Result;
